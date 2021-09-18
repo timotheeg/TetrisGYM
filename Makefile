@@ -2,9 +2,9 @@ tetris_obj := main.o tetris-ram.o tetris.o
 
 MD5 := md5sum -c
 
-CA65 := /usr/bin/ca65
-LD65 := /usr/bin/ld65
-nesChrEncode := python tools/nes-util/nes_chr_encode.py
+CA65 := /usr/local/bin/ca65
+LD65 := /usr/local/bin/ld65
+nesChrEncode := python3 tools/nes-util/nes_chr_encode.py
 
 tetris.nes: tetris.o main.o tetris-ram.o
 
@@ -17,7 +17,7 @@ tetris:= tetris.nes
 .PHONY: clean compare tools
 
 
-CAFLAGS = -l tetris.lst -g
+CAFLAGS = --verbose -l tetris.lst -g
 LDFLAGS =
 
 compare: $(tetris)
