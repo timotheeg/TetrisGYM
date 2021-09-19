@@ -6850,9 +6850,9 @@ pause:
         jmp @pauseLoopCommon
 
 @pauseLoopNotClassic:
-        lda #$74
+        lda #$C5
         sta spriteXOffset
-        lda #$58
+        lda #$16
         sta spriteYOffset
 
 @pauseLoopCommon:
