@@ -14,7 +14,7 @@ GHIJKLMNOPQRSTUV
 WXYZ-,˙>########
 ########qweadzxc
 ###############/
-##!##~######[]()
+##!##~##y###[]()
 ###############.
 ################
 ################
@@ -67,7 +67,7 @@ drawTiles(buffer, lookup, `
 #a    PAL MODE                d#
 #a                            d#
 #a                            d#
-#a V4Y                        d#
+#a V4y                        d#
 #a                            d#
 #a                            d#
 #a                            d#
