@@ -33,21 +33,6 @@ const presets = [
         `  X X X X`,
     ], 'JL'],
     [[
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
-        `          `,
         `  X       `,
         `       X  `,
         `  X   X   `,
@@ -75,18 +60,20 @@ presets.forEach((_, i) => {
 let total = presets.length;
 
 const pieceHash = (str) => {
-    let out = [...'1'.repeat(7)];
-    [...str].forEach(ch => out['ILSOZJT'.indexOf(ch)] = '0')
+    const out = [...'ILSOZJT']
+        .map(c => str.includes(c) ? 0 : 1)
+
     return Number('0b' + out.join``);
 };
 
 presets.forEach(([preset, pieces], i) => {
     preset.length < 20 &&
-        preset.splice(0, 0, ...Array.from({ length: 20 - preset.length }, () => ''));
+        preset.splice(0, 0, ...Array(20 - preset.length).fill(''));
     preset = preset.map(d => d.padEnd(10, ' '));
     const bytes = [...preset.join('')]
         .map((ch, i) => ch === 'X' ? i : ' ')
         .filter(d => d !== ' ');
+
     out += `preset${i}:\n`;
     const bytesList = [
         pieceHash(pieces),
